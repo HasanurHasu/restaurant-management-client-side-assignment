@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Burger",
+        "img": "https://www.foodandwine.com/thmb/DI29Houjc_ccAtFKly0BbVsusHc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
+        "foodCategory": "Fast Food",
+        "price": 5.99
+    },
+    {
+        "id": 2,
+        "name": "Pizza",
+        "img": "https://hips.hearstapps.com/hmg-prod/images/classic-cheese-pizza-recipe-2-64429a0cb408b.jpg?crop=0.8888888888888888xw:1xh;center,top&resize=1200:*",
+        "foodCategory": "Italian",
+        "price": 8.99
+    },
+    {
+        "id": 3,
+        "name": "Salad",
+        "img": "https://foodhub.scene7.com/is/image/woolworthsltdprod/2011-greek-chicken-salad:Mobile-1300x1150",
+        "foodCategory": "Healthy",
+        "price": 6.49
+    },
+    {
+        "id": 4,
+        "name": "Sushi",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sushi_platter.jpg/800px-Sushi_platter.jpg",
+        "foodCategory": "Japanese",
+        "price": 12.99
+    },
+    {
+        "id": 5,
+        "name": "Tacos",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg",
+        "foodCategory": "Mexican",
+        "price": 7.99
+    },
+    {
+        "id": 6,
+        "name": "Pasta",
+        "img": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FEdit%2F09-2022-sausage-pasta%2Fsausage-pasta-4",
+        "foodCategory": "Italian",
+        "price": 9.99
+    }
+]
