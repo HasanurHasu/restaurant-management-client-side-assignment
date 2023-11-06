@@ -20,7 +20,7 @@ const TopFoodCard = ({ topFood }) => {
                         </div>
                     </div>
                     <div>
-                        <button className='btn btn-sm btn-error'>Details</button>
+                        <button className='btn-sm bg-orange-600 text-white rounded'>Details</button>
                     </div>
                 </div>
             </div>

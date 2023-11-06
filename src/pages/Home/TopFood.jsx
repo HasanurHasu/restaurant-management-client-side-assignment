@@ -19,7 +19,7 @@ const TopFood = () => {
                 }
             </div>
             <div>
-                <Link to='/allFoodItems'><button className="btn btn-error">See All</button></Link>
+                <Link to='/allFoodItems'><button className="btn-md bg-orange-600 text-lg text-white rounded px-7">See All</button></Link>
             </div>
         </div>
     );

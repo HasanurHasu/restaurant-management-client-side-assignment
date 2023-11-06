@@ -8,7 +8,7 @@ const Login = () => {
                     <h1 className="text-4xl font-bold my-5">Create an account</h1>
                     <div>
                         <h2>Email</h2>
-                        <input type="email" name="email" placeholder="Your Email Address" className="border-b-2 w-full input-md pl-0 text-base" />
+                        <input type="email" name="email" placeholder="Email Address" className="border-b-2 w-full input-md pl-0 text-base" />
                     </div>
                     <div>
                         <h2>Password</h2>

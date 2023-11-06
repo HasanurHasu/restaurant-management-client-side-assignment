@@ -21,11 +21,11 @@ const Register = () => {
                     </div>
                     <div>
                         <h2>Password</h2>
-                        <input type="password" name="password" placeholder="Your Email Address" className="border-b-2 w-full input-md pl-0 text-base" />
+                        <input type="password" name="password" placeholder="Password" className="border-b-2 w-full input-md pl-0 text-base" />
                     </div>
                     <div>
                         <h2>Confirm Password</h2>
-                        <input type="password" name="password" placeholder="Your Email Address" className="border-b-2 w-full input-md pl-0 text-base" />
+                        <input type="password" name="password" placeholder="Confirm Password" className="border-b-2 w-full input-md pl-0 text-base" />
                     </div>
                     <div>
                         <input type="submit" value="Register" className="text-center bg-orange-600 w-full rounded-md mt-2 py-3 text-white font-semibold" />
@@ -35,9 +35,9 @@ const Register = () => {
             </div>
             <div className="my-2">
                 <div className="flex justify-center items-center gap-2">
-                    <hr className="w-full" />
+                    <span className="w-full border-b-2"></span>
                     <span>Or</span>
-                    <hr className="w-full" />
+                    <span className="w-full border-b-2"></span>
                 </div>
                 <button className="w-full">
                 <div className="my-2 border-2 py-3 rounded-full">
