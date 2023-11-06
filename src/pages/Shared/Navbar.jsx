@@ -6,7 +6,7 @@ const Navbar = () => {
             <NavLink to='/'>Home</NavLink>
             <NavLink to='/allFoodItems'>All Food Items</NavLink>
             <NavLink to='/blog'>Blog</NavLink>
-            <NavLink to='/login'>login</NavLink>
+            <NavLink to='/login'>Login</NavLink>
         </div>
     </>
     return (
@@ -39,9 +39,9 @@ const Navbar = () => {
                             </div>
                         </label>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
-                            <li><button>Added food items</button></li>
-                            <li><button>Add a food item</button></li>
-                            <li><button>My ordered food items</button></li>
+                            <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Added food items</button></li>
+                            <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Add a food item</button></li>
+                            <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">My ordered food items</button></li>
                         </ul>
                     </div>
                 </div>

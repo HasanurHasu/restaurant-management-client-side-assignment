@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TopFoodCard from "./TopFoodCard";
+import { Link } from "react-router-dom";
 
 const TopFood = () => {
     const [topFoods, setTopFoods] = useState([]);
@@ -18,7 +19,7 @@ const TopFood = () => {
                 }
             </div>
             <div>
-                <button className="btn btn-error">See All</button>
+                <Link to='/allFoodItems'><button className="btn btn-error">See All</button></Link>
             </div>
         </div>
     );
