@@ -6,6 +6,7 @@ import AllFoods from "../pages/AllFoods/AllFoods";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddItems from "../pages/AddItems/AddItems";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addItems',
-                element: <AddItems></AddItems>
+                element: <PrivateRoute><AddItems></AddItems></PrivateRoute>
             }
         ]
     }
