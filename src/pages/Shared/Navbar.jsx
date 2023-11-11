@@ -1,13 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
     const navLinks = <>
-        <div className="flex justify-center gap-5 items-center text-white font-medium">
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='/allFoodItems'>All Food Items</NavLink>
-            <NavLink to='/blog'>Blog</NavLink>
-            <NavLink to='/login'>Login</NavLink>
-        </div>
+        {
+            user ?
+            <div className="flex justify-center gap-5 items-center text-white font-medium">
+                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/allFoodItems'>All Food Items</NavLink>
+                <NavLink to='/blog'>Blog</NavLink>
+            </div>
+            :
+            <div className="flex justify-center gap-5 items-center text-white font-medium">
+                <NavLink to='/'>Home</NavLink>
+                <NavLink to='/allFoodItems'>All Food Items</NavLink>
+                <NavLink to='/blog'>Blog</NavLink>
+                <NavLink to='/login'>Login</NavLink>
+            </div>
+        }
     </>
     return (
 
@@ -39,9 +52,11 @@ const Navbar = () => {
                             </div>
                         </label>
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
-                            <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Added food items</button></li>
+                            <Link to='/addedItems'><li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Added food items</button></li></Link>
                             <Link to='/addItems'><li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Add a food item</button></li></Link>
                             <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">My ordered food items</button></li>
+                            <li className="hover:bg-red-500 rounded-md"><button onClick={logOut} className="hover:text-white">Logout</button></li>
+                            
                         </ul>
                     </div>
                 </div>

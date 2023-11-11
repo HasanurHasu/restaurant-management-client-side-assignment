@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddItems from "../pages/AddItems/AddItems";
 import PrivateRoute from "./PrivateRoute";
+import AddedItems from "../pages/AddedItems/AddedItems";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/addItems',
                 element: <PrivateRoute><AddItems></AddItems></PrivateRoute>
+            },
+            {
+                path: '/addedItems',
+                element: <PrivateRoute><AddedItems></AddedItems></PrivateRoute>
             }
         ]
     }

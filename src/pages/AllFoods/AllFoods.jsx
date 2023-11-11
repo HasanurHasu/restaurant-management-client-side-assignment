@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AllFoodsCard from "./AllFoodsCard";
-import { AuthContext } from "../../provider/AuthProvider";
 // import './AllFoods.css'
 
 
