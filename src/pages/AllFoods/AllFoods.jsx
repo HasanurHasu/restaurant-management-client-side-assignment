@@ -5,7 +5,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 
 const AllFoods = () => {
-    const { foods } = useContext(AuthContext)
+    const [foods, setFoots] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const [count, setCount] = useState(0)
     const itemsPerPage = 9;
@@ -18,6 +18,13 @@ const AllFoods = () => {
             .then(res => res.json())
             .then(data => setCount(data.count))
     }, [])
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/allFoots?page=${currentPage}&size=${itemsPerPage}`)
+            .then(res => res.json())
+            .then(data => setFoots(data))
+    }, [currentPage, itemsPerPage]);
 
 
     const handlePrevPage = () => {
