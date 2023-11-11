@@ -10,6 +10,7 @@ const auth = getAuth(app);
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [foods, setFoods] = useState([])
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -27,6 +28,12 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        fetch('http://localhost:5000/foods')
+        .then(res => res.json())
+        .then(data => setFoods(data))
+    }, [])
+
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
             
@@ -42,7 +49,8 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signIn,
-        logOut
+        logOut,
+        foods
     }
 
     return (

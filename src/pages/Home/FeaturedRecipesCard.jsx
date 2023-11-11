@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
-const FeaturedRecipesCard = ({ topFood }) => {
-    const {name, img } = topFood;
+const FeaturedRecipesCard = ({ food }) => {
+    const {name, image} = food;
     return (
         <div>
-            <div className="h-[400px] flex items-end rounded-md" style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover' }}>
+            <div className="h-[400px] flex items-end rounded-md" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}>
                 <div className='bg-base-300 rounded-md px-4 py-2 flex justify-center items-center gap-4'>
                     <div className="">
                         <div className="avatar">
@@ -26,7 +26,7 @@ const FeaturedRecipesCard = ({ topFood }) => {
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                 </div>
                 <h1 className='text-lg font'>{name}</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis fugiat.</p>
@@ -36,7 +36,7 @@ const FeaturedRecipesCard = ({ topFood }) => {
 };
 
 FeaturedRecipesCard.propTypes = {
-    topFood: PropTypes.object
+    food: PropTypes.object
 };
 
 export default FeaturedRecipesCard;

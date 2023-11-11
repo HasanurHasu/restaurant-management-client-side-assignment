@@ -1,18 +1,12 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import FeaturedRecipesCard from "./FeaturedRecipesCard";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const FeaturedRecipes = () => {
-    const [topFoods, setTopFoods] = useState([]);
+    const { foods } = useContext(AuthContext)
 
-    useEffect(() => {
-        fetch('/topFood.json')
-            .then(res => res.json())
-            .then(data => setTopFoods(data))
-    }, [])
-
-    const featuredFood = topFoods.slice(0, 3);
+    const featuredFood = foods.slice(0, 3);
 
     return (
         <div className="mt-12 max-w-6xl mx-auto">
@@ -20,10 +14,10 @@ const FeaturedRecipes = () => {
             <p className="text-center w-1/2 mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non cumque assumenda, ullam illo consectetur quam voluptate dolores facere aut est!</p>
             <div className="grid grid-cols-3 gap-10">
                 {
-                    featuredFood.map(topFood => <FeaturedRecipesCard key={topFood.id} topFood={topFood}></FeaturedRecipesCard>)
+                    featuredFood.map(food => <FeaturedRecipesCard key={food._id} food={food}></FeaturedRecipesCard>)
                 }
             </div>
-            
+
         </div>
     );
 };

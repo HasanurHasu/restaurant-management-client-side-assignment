@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
 const TopFoodCard = ({ topFood }) => {
-    const { name, img, foodCategory } = topFood;
+    const { name, image } = topFood;
     return (
         <div className="card bg-base-100 border shadow-xl">
             <figure className="px-5 pt-5">
-                <img src={img} alt="Shoes" className="rounded-xl h-40 w-56" />
+                <img src={image} alt="Shoes" className="rounded-xl h-40 w-56" />
             </figure>
             <div className="px-5 py-5 space-y-2">
                 <h2 className="card-title">{name}</h2>

@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../provider/AuthProvider';
 
 const AddItems = () => {
+    const {user} = useContext(AuthContext)
+
     const handleAddItems = event => {
         event.preventDefault();
         const form = event.target;
@@ -66,7 +70,7 @@ const AddItems = () => {
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Add By</h3>
-                            <input type="name" name="addBy" placeholder="Add By" className="p-[10px] rounded-md w-full" />
+                            <input type="name" name="addBy" defaultValue={user?.email} readOnly className="p-[10px] rounded-md w-full" />
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Food Origin</h3>

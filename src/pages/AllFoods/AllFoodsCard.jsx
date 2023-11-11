@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
 const AllFoodsCard = ({ topFood }) => {
-    const { img, name } = topFood;
+    const { image, name } = topFood;
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-5 pt-5">
-                <img src={img} alt="Shoes" className="rounded-xl h-60 w-96" />
+                <img src={image} alt="Shoes" className="rounded-xl h-60 w-96" />
             </figure>
             <div className="px-5 py-5 space-y-2">
                 <h2 className="card-title">{name}</h2>
@@ -20,7 +20,7 @@ const AllFoodsCard = ({ topFood }) => {
                         </div>
                     </div>
                     <div>
-                        <button className='btn btn-sm btn-error'>Details</button>
+                        <button className='btn-sm bg-orange-600 text-white rounded'>Details</button>
                     </div>
                 </div>
             </div>
