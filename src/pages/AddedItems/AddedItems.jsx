@@ -7,7 +7,6 @@ import { AiFillDelete } from 'react-icons/ai';
 const AddedItems = () => {
     const { user } = useContext(AuthContext);
     const [addedItems, setAddedItems] = useState([]);
-    console.log(user);
 
     useEffect(() => {
         fetch(`http://localhost:5000/addedItems?email=${user.email}`)
@@ -36,7 +35,7 @@ const AddedItems = () => {
                 </thead>
                 <tbody>
                     {
-                        addedItems.map(addedItem => <AddedItemsRow key={addedItem._id} addedItem={addedItem}></AddedItemsRow>)
+                        addedItems.map(addedItem => <AddedItemsRow key={addedItem._id} addedItem={addedItem} addedItems={addedItems} setAddedItems={setAddedItems}></AddedItemsRow>)
                     }
                 </tbody>
             </table>
