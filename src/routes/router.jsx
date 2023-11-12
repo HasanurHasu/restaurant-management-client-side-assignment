@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import AddItems from "../pages/AddItems/AddItems";
 import PrivateRoute from "./PrivateRoute";
 import AddedItems from "../pages/AddedItems/AddedItems";
+import UpdateItems from "../pages/UpdateItems/UpdateItems";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
             {
                 path: '/addedItems',
                 element: <PrivateRoute><AddedItems></AddedItems></PrivateRoute>
+            },
+            {
+                path: '/updateItems/:id',
+                element: <UpdateItems></UpdateItems>,
+                
             }
         ]
     }

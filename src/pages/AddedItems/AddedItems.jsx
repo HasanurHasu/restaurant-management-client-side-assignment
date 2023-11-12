@@ -18,17 +18,13 @@ const AddedItems = () => {
                 {/* head */}
                 <thead className="font-bold text-black">
                     <tr>
-                        <th>
-                            <label>
-                                <h1>Delete</h1>
-                            </label>
-                        </th>
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Origin</th>
                         <th>Edit</th>
+                        <th>Delete</th>
                         
                     </tr>
                 </thead>
