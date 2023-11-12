@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import AddedItemsRow from "./AddedItemsRow";
-import { AiFillDelete } from 'react-icons/ai';
 
 
 const AddedItems = () => {

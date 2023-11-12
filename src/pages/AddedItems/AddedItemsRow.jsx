@@ -74,7 +74,9 @@ const AddedItemsRow = ({ addedItem, addedItems, setAddedItems }) => {
     };
 
     AddedItemsRow.propTypes = {
-        addedItem: PropTypes.object
+        addedItem: PropTypes.object,
+        addedItems: PropTypes.array,
+        setAddedItems: PropTypes.func
     };
 
     export default AddedItemsRow;
