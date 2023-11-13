@@ -9,6 +9,7 @@ import AddItems from "../pages/AddItems/AddItems";
 import PrivateRoute from "./PrivateRoute";
 import AddedItems from "../pages/AddedItems/AddedItems";
 import UpdateItems from "../pages/UpdateItems/UpdateItems";
+import Details from "../pages/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -42,8 +43,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/updateItems/:id',
-                element: <UpdateItems></UpdateItems>,
-                
+                element: <PrivateRoute><UpdateItems></UpdateItems></PrivateRoute>,
+            },
+            {
+                path: '/details/:id',
+                element: <PrivateRoute><Details></Details></PrivateRoute>
             }
         ]
     }
