@@ -9,7 +9,7 @@ const Details = () => {
     const { user } = useContext(AuthContext)
     const { id } = useParams();
     const [food, setFood] = useState({});
-    const { name, category, quantity, price, description, origin, image, addByName, totalOrder } = food;
+    const { name, category, quantity, price, description, origin, image, addByEmail, addByName, totalOrder } = food;
     const orderCount = { totalOrder: parseInt(totalOrder) + 1 };
     useEffect(() => {
         fetch(`http://localhost:5000/updateProducts/${id}`)
@@ -21,15 +21,22 @@ const Details = () => {
         if (quantity <= totalOrder) {
             return toast.error('Food Quantity Not Available')
         }
+        if (addByEmail == user.email) {
+            return toast.error('You can not order your products.')
+        }
 
-        var today = new Date();
+        let currentDate = new Date();
 
-        var day = today.getDate();
-        var month = today.getMonth() + 1;
-        var year = today.getFullYear();
-        
+        // Extract hours, minutes, and seconds
+        let hours = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        let seconds = currentDate.getSeconds();
+
+        // Format the time as HH:MM:SS
+        let orderTime = hours + ":" + minutes + ":" + seconds;
+
         const email = user.email;
-        const addCard = { name, category, quantity, price, description, email, origin, image, orderDate : (year + '-' + month + '-' + day)}
+        const addCard = { name, category, quantity, price, description, email, origin, image, orderTime }
         console.log(addCard);
         fetch('http://localhost:5000/addToCard', {
             method: 'POST',

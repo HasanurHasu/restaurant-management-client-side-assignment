@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { TiDelete } from 'react-icons/ti';
 
-const OrderCardRow = ({order}) => {
-    const {  name, image, category, price, quantity, origin, orderDate } = order;
+const OrderCardRow = ({ order }) => {
+    const { _id, name, image, category, price, quantity, origin, orderTime } = order;
     return (
         <tr>
 
@@ -21,7 +22,7 @@ const OrderCardRow = ({order}) => {
                 <h1>{category}</h1>
             </td>
             <td>
-                <h1>{orderDate}</h1>
+                <h1>{orderTime}</h1>
             </td>
             <td>{price}</td>
             <th>
@@ -29,6 +30,9 @@ const OrderCardRow = ({order}) => {
             </th>
             <th>
                 <h1 className='font-normal'>{origin}</h1>
+            </th>
+            <th>
+                <button onClick={() => handleDelete(_id)} ><TiDelete className='text-3xl' /></button>
             </th>
         </tr>
     );

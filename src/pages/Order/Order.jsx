@@ -22,10 +22,11 @@ const Order = () => {
                 <tr>
                     <th>Name</th>
                     <th>Category</th>
-                    <th>Order Date</th>
+                    <th>Order Time</th>
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Origin</th>
+                    <th>Delete</th>
                     
                 </tr>
             </thead>
