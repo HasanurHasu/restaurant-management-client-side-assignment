@@ -3,7 +3,7 @@ import Swal from 'sweetalert2'
 import { AuthContext } from '../../provider/AuthProvider';
 
 const AddItems = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     const handleAddItems = event => {
         event.preventDefault();
@@ -14,13 +14,11 @@ const AddItems = () => {
         const quantity = form.quantity.value;
         const price = form.price.value;
         const description = form.description.value;
-        const addBy = form.addBy.value;
         const origin = form.origin.value;
         const image = form.image.value;
 
-        const newItems = { name, category, quantity, price, description, addBy, origin, image }
+        const newItems = { name, category, quantity, price, description, addByEmail: user.email, addByName: user.displayName, origin, image, totalOrder: 0 }
         console.log(newItems);
-
         fetch('http://localhost:5000/foods', {
             method: 'POST',
             headers: {
@@ -69,14 +67,18 @@ const AddItems = () => {
                             <input type="name" name="description" placeholder="Enter Short Description" className="p-[10px] rounded-md w-full" />
                         </div>
                         <div>
-                            <h3 className="label-text text-xl mb-3">Add By</h3>
+                            <h3 className="label-text text-xl mb-3">Add By Email</h3>
                             <input type="name" name="addBy" defaultValue={user?.email} readOnly className="p-[10px] rounded-md w-full" />
+                        </div>
+                        <div>
+                            <h3 className="label-text text-xl mb-3">Add By Name</h3>
+                            <input type="name" name="addBy" defaultValue={user?.displayName} readOnly className="p-[10px] rounded-md w-full" />
                         </div>
                         <div>
                             <h3 className="label-text text-xl mb-3">Food Origin</h3>
                             <input type="name" name="origin" placeholder="Food Origin" className="p-[10px] rounded-md w-full" />
                         </div>
-                        <div>
+                        <div className='col-span-2'>
                             <h3 className="label-text text-xl mb-3">Image</h3>
                             <input type="name" name="image" placeholder="Enter Image URL" className="p-[10px] rounded-md w-full" />
                         </div>

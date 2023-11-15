@@ -2,12 +2,15 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Details = () => {
     const { user } = useContext(AuthContext)
     const { id } = useParams();
     const [food, setFood] = useState({});
-    const { name, category, quantity, price, description, addBy, origin, image } = food;
+    const { name, category, quantity, price, description, origin, image, addByName, totalOrder } = food;
+    const orderCount = { totalOrder: parseInt(totalOrder) + 1 };
     useEffect(() => {
         fetch(`http://localhost:5000/updateProducts/${id}`)
             .then(res => res.json())
@@ -15,9 +18,18 @@ const Details = () => {
     }, [])
 
     const handleAddToCard = () => {
+        if (quantity <= totalOrder) {
+            return toast.error('Food Quantity Not Available')
+        }
 
+        var today = new Date();
+
+        var day = today.getDate();
+        var month = today.getMonth() + 1;
+        var year = today.getFullYear();
+        
         const email = user.email;
-        const addCard = { name, category, quantity, price, description, email, origin, image }
+        const addCard = { name, category, quantity, price, description, email, origin, image, orderDate : (year + '-' + month + '-' + day)}
         console.log(addCard);
         fetch('http://localhost:5000/addToCard', {
             method: 'POST',
@@ -34,6 +46,28 @@ const Details = () => {
                         text: "You clicked the button!",
                         icon: "success"
                     });
+                }
+            })
+
+
+
+        fetch(`http://localhost:5000/foodsOrder/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderCount)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.matchedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Your Order Successful',
+                        icon: 'success',
+                        confirmButtonText: 'Okay'
+                    })
                 }
             })
     }
@@ -60,11 +94,24 @@ const Details = () => {
                 <p>{description}</p>
                 <p className="text-lg font-semibold">Price: ${price}</p>
                 <p>Origin: {origin}</p>
+                <p>Made By: {addByName}</p>
+                <p className="text-pink-600 text-lg font-semibold">Total Order: {totalOrder}</p>
                 <div className="flex gap-5">
-                    <button className='bg-orange-600 text-white rounded py-3 w-40'>By Now</button>
-                    <button onClick={handleAddToCard} className='bg-green-600 text-white rounded py-3 w-40'>Add To Card</button>
+                    <button onClick={handleAddToCard} className='bg-green-600 text-white rounded py-3 w-40'>Order Now</button>
                 </div>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
         </div>
     );
 };

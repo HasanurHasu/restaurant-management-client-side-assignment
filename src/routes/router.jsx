@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import AddedItems from "../pages/AddedItems/AddedItems";
 import UpdateItems from "../pages/UpdateItems/UpdateItems";
 import Details from "../pages/Details/Details";
+import Order from "../pages/Order/Order";
 
 const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>
+            },
+            {
+                path: '/myCard',
+                element: <PrivateRoute><Order></Order></PrivateRoute>
             }
         ]
     }

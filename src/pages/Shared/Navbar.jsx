@@ -54,7 +54,7 @@ const Navbar = () => {
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 bg-base-100 rounded-box w-52">
                             <Link to='/addedItems'><li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Added food items</button></li></Link>
                             <Link to='/addItems'><li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">Add a food item</button></li></Link>
-                            <li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">My ordered food items</button></li>
+                            <Link to='/myCard'><li className="hover:bg-red-500 rounded-md"><button className="hover:text-white">My ordered food items</button></li></Link>
                             <li className="hover:bg-red-500 rounded-md"><button onClick={logOut} className="hover:text-white">Logout</button></li>
                             
                         </ul>
