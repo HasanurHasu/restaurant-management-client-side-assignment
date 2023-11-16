@@ -17,7 +17,7 @@ const AddItems = () => {
         const origin = form.origin.value;
         const image = form.image.value;
 
-        const newItems = { name, category, quantity, price, description, addByEmail: user.email, addByName: user.displayName, origin, image, totalOrder: 0 }
+        const newItems = { name, category, quantity, price, description, addByEmail: user.email, addByName: user.displayName, origin, image, totalOrder: parseInt(0) }
         console.log(newItems);
         fetch('http://localhost:5000/foods', {
             method: 'POST',

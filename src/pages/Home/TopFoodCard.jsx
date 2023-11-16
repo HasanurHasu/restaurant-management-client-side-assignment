@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const TopFoodCard = ({ topFood }) => {
-    const { name, image } = topFood;
+    const { name, image, totalOrder } = topFood;
     return (
         <div className="card bg-base-100 border shadow-xl">
             <figure className="px-5 pt-5">
@@ -10,6 +10,7 @@ const TopFoodCard = ({ topFood }) => {
             <div className="px-5 py-5 space-y-2">
                 <h2 className="card-title">{name}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>{totalOrder}</p>
                 <div className='flex justify-between items-center'>
                     <div className="flex items-center gap-3">
                         <div className="rating rating-sm">

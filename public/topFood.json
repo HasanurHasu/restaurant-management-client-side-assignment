@@ -2,12 +2,12 @@
     {
         "name": "Tacos",
         "category": "Mexican",
-        "quantity": "20",
+        "quantity": "4",
         "price": "500",
         "description": "Savory, handheld delights: Tacos boast flavorful fillings nestled in warm tortillas, a Mexican culinary classic enjoyed worldwide for good reason.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 4,
         "origin": "Bangladesh",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg"
     },
@@ -19,7 +19,7 @@
         "description": "Italian staple, pasta, is versatile and satisfying. Boiled, baked, or sautéed, it pairs with diverse sauces for delicious meals.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FEdit%2F09-2022-sausage-pasta%2Fsausage-pasta-4"
     },
@@ -31,7 +31,7 @@
         "description": "Pad Thai: Thai stir-fried noodles with tamarind, peanuts, tofu, or shrimp, creating a sweet, tangy, and savory dish bursting with flavors.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 12,
         "origin": "Bangladesh",
         "image": "https://img.taste.com.au/jgHrD_eG/w720-h480-cfill-q80/taste/2021/02/10-minute-vegetarian-pad-thai-168946-2.jpg"
     },
@@ -43,7 +43,7 @@
         "description": "Succulent grilled salmon, drizzled with zesty lemon, served on a bed of quinoa and roasted asparagus. Delightful, nutritious perfection!",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "data:image/jpeg;base64,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"
     },
@@ -55,7 +55,7 @@
         "description": " Spiced potato-filled pastry, crisp exterior, triangular delight, deep-fried or baked, popular Indian snack, savory, portable, flavorful indulgence.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 1,
         "origin": "Indian",
         "image": "https://rasoirani.com/wp-content/uploads/2021/05/pasta-samosa.jpg"
     },
@@ -67,7 +67,7 @@
         "description": "Creamy chickpea delight, rich tahini embrace. Lemon's zest, garlic's warmth dance. Spread, dip, savor. Hummus: Mediterranean magic, taste enchantment.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://www.inspiredtaste.net/wp-content/uploads/2019/07/The-Best-Homemade-Hummus-Recipe-1200.jpg"
     },
@@ -79,7 +79,7 @@
         "description": "Fresh salmon atop seasoned rice, wrapped in seaweed—a delightful balance of textures and flavors, a bite-sized Japanese masterpiece.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://cdn.britannica.com/52/128652-050-14AD19CA/Maki-zushi.jpg"
     },
@@ -91,7 +91,7 @@
         "description": "Spicy chicken, beans, rice, and cheese wrapped in a warm tortilla—a flavor-packed fiesta in every bite.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://images.immediate.co.uk/production/volatile/sites/2/2023/02/Beef-burrito-df843b7.jpg?resize=768,574"
     },
@@ -103,7 +103,7 @@
         "description": "Flaky, buttery layers embrace a golden crescent. Soft interior, crisp exterior. Morning delight, a French pastry's tender elegance unfolds.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "French",
         "image": "https://breadsandsweets.com/wp-content/uploads/2021/08/croissant-sq2.jpg"
     },
@@ -115,7 +115,7 @@
         "description": "Hearty beef broth, rice noodles, and tender slices of beef, topped with fresh herbs—a classic Vietnamese comfort, aromatic delight.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Vietnamese",
         "image": "https://www.allrecipes.com/thmb/SZjdgaXhmkrRNLoOvdxuAktwk3E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/228443-authentic-pho-DDMFS-4x3-0523f6531ccf4dbeb4b5bde52e007b1e.jpg"
     },
@@ -127,7 +127,7 @@
         "description": "Crispy chickpea fritters, vibrant with herbs and spices. Served in warm pita, a delightful Middle Eastern street food classic.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://toriavey.com/images/2011/01/TOA109_18-1.jpeg"
     },
@@ -139,7 +139,7 @@
         "description": "Saffron-infused rice, seafood, and chorizo dance in a vibrant medley, defining the iconic Spanish paella, a culinary masterpiece.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://iamafoodblog.b-cdn.net/wp-content/uploads/2012/07/paella-9174.jpg"
     },
@@ -151,7 +151,7 @@
         "description": "Al dente spaghetti, vibrant tomato sauce, basil, and Parmesan dance on your palate, a symphony of flavors in simplicity.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Italian",
         "image": "https://iheartvegetables.com/wp-content/uploads/2023/04/Cottage-Cheese-Pasta-Sauce-3-of-4.jpg"
     },
@@ -163,7 +163,7 @@
         "description": "We believe that homes are a reflection of the people who live inside, where everything looks and works the way you want it to",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://pizzainnpalestine.com/wp-content/uploads/2019/10/menu_image2.jpg"
     },
@@ -175,7 +175,7 @@
         "description": "Savory, handheld delights: Tacos boast flavorful fillings nestled in warm tortillas, a Mexican culinary classic enjoyed worldwide for good reason.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
-        "totalOrder": "0",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg"
     },
@@ -187,6 +187,7 @@
         "description": "Savory, handheld delights: Tacos boast flavorful fillings nestled in warm tortillas, a Mexican culinary classic enjoyed worldwide for good reason.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg/1200px-001_Tacos_de_carnitas%2C_carne_asada_y_al_pastor.jpg"
     },
@@ -198,6 +199,7 @@
         "description": "Italian staple, pasta, is versatile and satisfying. Boiled, baked, or sautéed, it pairs with diverse sauces for delicious meals.",
         "addByEmail": "hasanurbirganj@gmail.com",
         "addByName": "Hasanur Rahman",
+        "totalOrder": 0,
         "origin": "Bangladesh",
         "image": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_4:3/k%2FEdit%2F09-2022-sausage-pasta%2Fsausage-pasta-4"
     }

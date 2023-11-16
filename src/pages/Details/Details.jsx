@@ -27,13 +27,17 @@ const Details = () => {
 
         let currentDate = new Date();
 
+        var currentYear = currentDate.getFullYear();
+        var currentMonth = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+        var currentDay = currentDate.getDate();
         // Extract hours, minutes, and seconds
         let hours = currentDate.getHours();
         let minutes = currentDate.getMinutes();
         let seconds = currentDate.getSeconds();
 
         // Format the time as HH:MM:SS
-        let orderTime = hours + ":" + minutes + ":" + seconds;
+        // let orderTime = currentDay+"/"+ hours + ":" + minutes + ":" + seconds;
+        let orderTime = `${currentDay}/${currentMonth}/${currentYear}  ${hours}:${minutes}:${seconds}`;
 
         const email = user.email;
         const addCard = { name, category, quantity, price, description, email, origin, image, orderTime }

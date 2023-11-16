@@ -1,10 +1,15 @@
-import { useContext } from "react";
 import TopFoodCard from "./TopFoodCard";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../provider/AuthProvider";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const TopFood = () => {
-    const { foods } = useContext(AuthContext);
+    const [foods, setFoods] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:5000/topFoods')
+        .then(res => res.json())
+        .then(data => setFoods(data))
+    }, [])
 
     return (
         <div className="max-w-4xl mx-auto mt-20 flex flex-col justify-center items-center gap-6">
