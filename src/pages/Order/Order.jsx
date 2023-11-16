@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import OrderCardRow from "./OrderCardRow";
+import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 
 const Order = () => {
@@ -8,14 +10,21 @@ const Order = () => {
     const [orders, setOrders] = useState([]);
     
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrder?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setOrders(data))
+
+        axios.get(`http://localhost:5000/myOrder?email=${user.email}`, {withCredentials: true})
+        .then(res => setOrders(res.data))
+
+        // fetch(`http://localhost:5000/myOrder?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => setOrders(data))
     }, [])
 
     console.log(orders);
     return (
         <div className="overflow-x-auto max-w-6xl mx-auto my-8">
+            <Helmet>
+                <title>Your Orders</title>
+            </Helmet>
         <table className="table">
             {/* head */}
             <thead className="font-bold text-black">

@@ -4,6 +4,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -96,7 +97,10 @@ const Register = () => {
     }
 
     return (
-        <div className="w-1/3 mx-auto my-16">
+        <div className="lg:w-1/3 mx-5 md:mx-6 lg:mx-auto my-16">
+            <Helmet>
+                <title>Registration</title>
+            </Helmet>
             <div className="w-full border-2 rounded-md py-5 px-10">
                 <form onSubmit={hanldeRegister} className="flex flex-col text-lg space-y-3 w-full">
                     <h1 className="text-4xl font-bold my-5">Create an account</h1>

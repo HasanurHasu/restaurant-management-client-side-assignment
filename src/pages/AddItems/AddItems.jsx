@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const AddItems = () => {
     const { user } = useContext(AuthContext)
@@ -41,11 +42,14 @@ const AddItems = () => {
     }
     return (
         <div className="max-w-6xl mx-auto bg-[#FFF8F5] p-20">
+            <Helmet>
+                <title>Add Items</title>
+            </Helmet>
             <h1 className="text-3xl text-center font-bold mb-4">Add New Product</h1>
             <p className="text-center w-9/12 mx-auto">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
             <div>
                 <form onSubmit={handleAddItems}>
-                    <div className="grid grid-cols-2 gap-5 mt-10">
+                    <div className="lg:grid md:grid md:grid-cols-2 lg:grid-cols-2 gap-5 mt-10">
                         <div>
                             <h3 className="label-text text-xl mb-3">Food Name</h3>
                             <input type="name" name="name" placeholder="Enter Product Name" className="p-[10px] rounded-md w-full" />

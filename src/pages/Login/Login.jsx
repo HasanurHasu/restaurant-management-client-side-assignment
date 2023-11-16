@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { signIn, singInWithGoogle } = useContext(AuthContext);
@@ -19,7 +21,17 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
-                navigate(location?.state ? location.state : '/')
+
+                const user = { email }
+
+                // get access token
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate(location?.state ? location?.state : '/')
+                        }
+                    })
             })
             .catch(error => {
                 console.log(error.message);
@@ -31,8 +43,16 @@ const Login = () => {
     const handleWithLogin = () => {
         singInWithGoogle()
             .then(result => {
-                console.log(result.user);
-                navigate(location?.state ? location.state : '/')
+                const user = { email: result.user.email }
+
+                // get access token
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate(location?.state ? location?.state : '/')
+                        }
+                    })
             })
             .catch(error => {
                 console.log(error.message);
@@ -42,7 +62,10 @@ const Login = () => {
 
     }
     return (
-        <div className="w-1/3 mx-auto my-16">
+        <div className="lg:w-1/3 mx-5 md:mx-6 lg:mx-auto my-16">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="w-full border-2 rounded-md py-5 px-10">
                 <form onSubmit={handleLogin} className="flex flex-col text-lg space-y-3 w-full">
                     <h1 className="text-4xl font-bold my-5">Login your account</h1>

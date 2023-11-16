@@ -43,7 +43,7 @@ const AllFoods = () => {
         <div className="mt-5 max-w-6xl mx-auto">
             <h1 className="text-3xl text-center font-bold">All Foods</h1>
             <p className="text-center w-1/2 mx-auto mb-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, ipsum qui! Itaque iure neque facere.</p>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {
                     foods.map(topFood => <AllFoodsCard key={topFood._id} topFood={topFood}></AllFoodsCard>)
                 }

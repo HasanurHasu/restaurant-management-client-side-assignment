@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import AllFoods from "../AllFoods/AllFoods";
 import Footer from "../Shared/Footer";
 import Banner from "./Banner";
@@ -8,6 +9,9 @@ import TopFood from "./TopFood";
 const HomePage = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home</title>
+            </Helmet>
             <Banner></Banner>
             <TopFood></TopFood>
             <FeaturedRecipes></FeaturedRecipes>

@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import { AuthContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Details = () => {
     const { user } = useContext(AuthContext)
@@ -86,6 +87,9 @@ const Details = () => {
     console.log(food);
     return (
         <div className="max-w-6xl mx-auto my-5 flex flex-col lg:flex-row lg:justify-center lg:items-center gap-8">
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
             <div className="w-1/2">
                 <img src={image} className="rounded-md w-full" alt="" />
             </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 
@@ -55,6 +56,9 @@ const UpdateItems = () => {
 
     return (
         <div className="max-w-6xl mx-auto bg-[#FFF8F5] p-20">
+            <Helmet>
+                <title>Update Food</title>
+            </Helmet>
             <h1 className="text-3xl text-center font-bold mb-4">Update Product</h1>
             <div>
                 <form onSubmit={handleUpdate}>

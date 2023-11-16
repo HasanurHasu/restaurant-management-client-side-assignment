@@ -6,7 +6,7 @@ const AllFoodsCard = ({ topFood }) => {
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure className="px-5 pt-5">
-                <img src={image} alt="Shoes" className="rounded-xl h-60 w-96" />
+                <img src={image} alt="Shoes" className="rounded-xl md:h-60 md:w-96 lg:h-60 lg:w-96" />
             </figure>
             <div className="px-5 py-5 space-y-2">
                 <h2 className="card-title">{name}</h2>
