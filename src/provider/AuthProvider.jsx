@@ -11,7 +11,10 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [foods, setFoods] = useState([])
+    const img = 'https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2021/07/08/img_2842_0.jpg'
+    const [userImg, setUserImg] = useState(img)
     const provider = new GoogleAuthProvider();
+   
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -42,8 +45,9 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-
+            
             setLoading(false);
+            setUserImg(currentUser.photoURL)
         });
         return () => {
             unSubscribe();
@@ -57,7 +61,8 @@ const AuthProvider = ({ children }) => {
         signIn,
         singInWithGoogle,
         logOut,
-        foods
+        foods,
+        userImg
     }
 
     return (

@@ -45,7 +45,7 @@ const Login = () => {
         <div className="w-1/3 mx-auto my-16">
             <div className="w-full border-2 rounded-md py-5 px-10">
                 <form onSubmit={handleLogin} className="flex flex-col text-lg space-y-3 w-full">
-                    <h1 className="text-4xl font-bold my-5">Create an account</h1>
+                    <h1 className="text-4xl font-bold my-5">Login your account</h1>
                     <div>
                         <h2>Email</h2>
                         <input type="email" name="email" placeholder="Email Address" className="border-b-2 w-full input-md pl-0 text-base" />
