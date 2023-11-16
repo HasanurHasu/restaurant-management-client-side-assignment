@@ -24,7 +24,6 @@ const Order = () => {
                     <th>Category</th>
                     <th>Order Time</th>
                     <th>Price</th>
-                    <th>Quantity</th>
                     <th>Origin</th>
                     <th>Delete</th>
                     

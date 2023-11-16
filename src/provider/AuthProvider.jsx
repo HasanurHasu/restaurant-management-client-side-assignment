@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 
 
@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [foods, setFoods] = useState([])
+    const provider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -27,16 +28,21 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
+    const singInWithGoogle = () => {
+        setLoading(true)
+        return signInWithPopup(auth, provider);
+    }
+
     useEffect(() => {
         fetch('http://localhost:5000/foods')
-        .then(res => res.json())
-        .then(data => setFoods(data))
+            .then(res => res.json())
+            .then(data => setFoods(data))
     }, [])
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            
+
             setLoading(false);
         });
         return () => {
@@ -49,6 +55,7 @@ const AuthProvider = ({ children }) => {
         loading,
         createUser,
         signIn,
+        singInWithGoogle,
         logOut,
         foods
     }

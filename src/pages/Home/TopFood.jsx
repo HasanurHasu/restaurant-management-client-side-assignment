@@ -11,12 +11,14 @@ const TopFood = () => {
         .then(data => setFoods(data))
     }, [])
 
+    const topSix = foods.slice(0, 6)
+
     return (
         <div className="max-w-4xl mx-auto mt-20 flex flex-col justify-center items-center gap-6">
             <h1 className="text-4xl font-bold text-center mb-5">Top Foods</h1>
             <div className="grid grid-cols-3 gap-10">
                 {
-                    foods.map(topFood => <TopFoodCard key={topFood._id} topFood={topFood}></TopFoodCard>)
+                    topSix.map(topFood => <TopFoodCard key={topFood._id} topFood={topFood}></TopFoodCard>)
                 }
             </div>
             <div>

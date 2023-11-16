@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,9 +7,11 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
-    
-    const hanldeRegister= e => {
+    const { createUser, singInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const hanldeRegister = e => {
         e.preventDefault();
         const from = e.target;
         const name = from.name.value;
@@ -27,23 +29,70 @@ const Register = () => {
             return;
         }
 
-        if (!(password === confirmPassword)){
+        if (!(password === confirmPassword)) {
             toast.error('Password do not match.')
             return;
         }
 
         createUser(email, password)
-        .then(result => {
-            console.log(result.user);
-            toast.success('User Registration Successfully');
-            updateProfile(result.user, {
-                displayName: name,
-                photoURL: photoUrl
+            .then(result => {
+                console.log(result.user.metadata.creationTime);
+                toast.success('User Registration Successfully');
+                const user = {
+                    name,
+                    email,
+                    photoUrl,
+                    createTime: result.user.metadata.creationTime,
+                    loginTime: result.user.metadata.lastSignInTime
+                }
+                updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photoUrl
+                })
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data))
             })
-        })
-        .catch(error => {
-            console.log(error);
-        })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleWithRegister = () => {
+        singInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/')
+                const user = {
+                    name: result.user.displayName,
+                    email: result.user.email,
+                    photoUrl: result.user.photoURL,
+                    createTime: result.user.metadata.creationTime,
+                    loginTime: result.user.metadata.lastSignInTime
+                }
+                fetch('http://localhost:5000/user', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+                
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error('Login failed, Try again later')
+
+            })
+
     }
 
     return (
@@ -83,13 +132,13 @@ const Register = () => {
                     <span>Or</span>
                     <span className="w-full border-b-2"></span>
                 </div>
-                <button className="w-full">
-                <div className="my-2 border-2 py-3 rounded-full">
-                    <div className="flex justify-start items-center gap-36">
-                        <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" alt="" className="w-8 ml-4" />
-                        <p>Continue with Google</p>
+                <button onClick={handleWithRegister} className="w-full">
+                    <div className="my-2 border-2 py-3 rounded-full">
+                        <div className="flex justify-start items-center gap-36">
+                            <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" alt="" className="w-8 ml-4" />
+                            <p>Continue with Google</p>
+                        </div>
                     </div>
-                </div>
                 </button>
             </div>
             <ToastContainer

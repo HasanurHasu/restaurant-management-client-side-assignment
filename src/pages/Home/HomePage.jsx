@@ -1,3 +1,4 @@
+import AllFoods from "../AllFoods/AllFoods";
 import Footer from "../Shared/Footer";
 import Banner from "./Banner";
 import FeaturedRecipes from "./FeaturedRecipes";
@@ -10,6 +11,9 @@ const HomePage = () => {
             <Banner></Banner>
             <TopFood></TopFood>
             <FeaturedRecipes></FeaturedRecipes>
+            <div className="mt-20">
+            <AllFoods></AllFoods>
+            </div>
             <Subscribe></Subscribe>
             <Footer></Footer>
         </div>

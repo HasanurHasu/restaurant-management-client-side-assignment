@@ -3,7 +3,7 @@ import { TiDelete } from 'react-icons/ti';
 import Swal from 'sweetalert2'
 
 const OrderCardRow = ({ order, orders, setOrders }) => {
-    const { _id, name, image, category, price, quantity, origin, orderTime } = order;
+    const { _id, name, image, category, price, origin, orderTime } = order;
 
     const handleDelete = (_id) => {
         Swal.fire({
@@ -57,9 +57,6 @@ const OrderCardRow = ({ order, orders, setOrders }) => {
                 <h1>{orderTime}</h1>
             </td>
             <td>{price}</td>
-            <th>
-                <h1 className='font-normal'>{quantity}</h1>
-            </th>
             <th>
                 <h1 className='font-normal'>{origin}</h1>
             </th>

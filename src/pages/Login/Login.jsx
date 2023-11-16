@@ -5,7 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn, singInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -24,6 +24,20 @@ const Login = () => {
             .catch(error => {
                 console.log(error.message);
                 toast.error('Login failed, Try again later')
+            })
+
+    }
+
+    const handleWithLogin = () => {
+        singInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.log(error.message);
+                toast.error('Login failed, Try again later')
+
             })
 
     }
@@ -52,7 +66,7 @@ const Login = () => {
                     <span>Or</span>
                     <hr className="w-full" />
                 </div>
-                <button className="w-full">
+                <button onClick={handleWithLogin} className="w-full">
                     <div className="my-2 border-2 py-3 rounded-full">
                         <div className="flex justify-start items-center gap-36">
                             <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png" alt="" className="w-8 ml-4" />

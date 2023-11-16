@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const TopFoodCard = ({ topFood }) => {
-    const { name, image, totalOrder } = topFood;
+    const { _id, name, image, totalOrder } = topFood;
     return (
         <div className="card bg-base-100 border shadow-xl">
             <figure className="px-5 pt-5">
@@ -21,7 +22,8 @@ const TopFoodCard = ({ topFood }) => {
                         </div>
                     </div>
                     <div>
-                        <button className='btn-sm bg-orange-600 text-white rounded'>Details</button>
+                        <Link to={`/details/${_id}`}><button className='btn-sm bg-orange-600 text-white rounded'>Details</button></Link>
+
                     </div>
                 </div>
             </div>
