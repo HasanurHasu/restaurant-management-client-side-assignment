@@ -1,8 +1,13 @@
-
+import 'aos/dist/aos.css'
+import Aos from "aos";
+import { useEffect } from 'react';
 
 const Banner = () => {
+    useEffect(() => {
+        Aos.init({duration: '1000', delay: '500'})
+    }, [])
     return (
-        <div className="carousel w-full h-[550px]">
+        <div data-aos="fade-up" className="carousel w-full h-[550px]">
             <div id="slide1" className="carousel-item relative w-full">
                 <div className="hero" style={{ backgroundImage: 'url(https://img.freepik.com/premium-photo/vegan-protein-full-set-plant-based-vegetarian-food-sources-healthy-eating-diet-ingredients_630207-7645.jpg?w=2000)' }}>
                     <div className="hero-overlay bg-opacity-60"></div>

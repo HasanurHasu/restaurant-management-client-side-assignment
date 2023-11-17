@@ -11,6 +11,7 @@ import AddedItems from "../pages/AddedItems/AddedItems";
 import UpdateItems from "../pages/UpdateItems/UpdateItems";
 import Details from "../pages/Details/Details";
 import Order from "../pages/Order/Order";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/login',

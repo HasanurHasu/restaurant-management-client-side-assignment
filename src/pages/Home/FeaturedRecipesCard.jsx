@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import 'aos/dist/aos.css'
 
 const FeaturedRecipesCard = ({ food }) => {
     const {name, image} = food;
     return (
-        <div>
+        <div data-aos="zoom-in">
             <div className="h-[400px] flex items-end rounded-md" style={{ backgroundImage: `url(${image})`, backgroundSize: 'cover' }}>
                 <div className='bg-base-300 rounded-md px-4 py-2 flex justify-center items-center gap-4'>
                     <div className="">

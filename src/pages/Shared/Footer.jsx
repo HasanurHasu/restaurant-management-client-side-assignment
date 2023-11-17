@@ -1,6 +1,13 @@
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 const Footer = () => {
+    useEffect(() => {
+        Aos.init({duration: '1000', delay: '500'})
+    }, [])
     return (
-        <div className='bg-base-200'>
+        <div data-aos="fade-down" className='bg-base-200'>
             <footer className="footer max-w-6xl mx-auto p-10 text-base-content">
                 <aside>
                     <h1 className="text-2xl font-bold text-orange-600">Restaurant</h1>
